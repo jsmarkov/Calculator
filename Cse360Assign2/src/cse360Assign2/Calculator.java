@@ -26,35 +26,38 @@ public class Calculator {
 			/**
 			 * getTotal returns the total
 			 */
-			return 0;
+			return total;
 		}
 		
 		public void add (int value) {
 			/**
 			 * add takes an integer and adds it to the total
 			 */
-			
+			total = total + value;
 		}
 		
 		public void subtract (int value) {
 			/**
 			 * subtract takes an integer and subtracts it from the total
 			 */
-			
+			total = total - value;
 		}
 		
 		public void multiply (int value) {
 			/**
 			 * multiply takes an integer and multiplies it with the total
 			 */
-			
+			total = total * value;
 		}
 		
 		public void divide (int value) {
 			/**
 			 * divide takes an integer and divides to total.  If the value is zero, the total is set to zero.
 			 */
-			
+			if(value == 0) {
+				total = 0;
+			}
+			total = total / value;
 		}
 		
 		public String getHistory () {
