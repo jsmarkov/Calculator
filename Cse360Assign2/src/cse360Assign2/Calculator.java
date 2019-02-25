@@ -14,12 +14,14 @@ public class Calculator {
 	 * and return all the operations done to a specific total in the form of a string
 	 */
 	private int total;
+	private String history;
 		
 		public Calculator () {
 			/**
-			 * Constructor for a new Calculator object sets the total to zero
+			 * Constructor for a new Calculator object sets the total to zero and sets history to "0"
 			 */
 			total = 0;  // not needed - included for clarity
+			history = "0";
 		}
 		
 		public int getTotal () {
@@ -32,32 +34,43 @@ public class Calculator {
 		public void add (int value) {
 			/**
 			 * add takes an integer and adds it to the total
+			 * it also concatenates history with the addition symbol and the value
 			 */
 			total = total + value;
+			history = history + " + " + value; 
 		}
 		
 		public void subtract (int value) {
 			/**
 			 * subtract takes an integer and subtracts it from the total
+			 * it also concatenates history with the subtraction symbol and the value
 			 */
 			total = total - value;
+			history = history + " - " + value;
 		}
 		
 		public void multiply (int value) {
 			/**
 			 * multiply takes an integer and multiplies it with the total
+			 * it also concatenates history with the multiplication symbol and the value
 			 */
 			total = total * value;
+			history = history + " * " + value;
 		}
 		
 		public void divide (int value) {
 			/**
 			 * divide takes an integer and divides to total.  If the value is zero, the total is set to zero.
+			 * it also concatenates history with the division symbol and the value
 			 */
 			if(value == 0) {
 				total = 0;
 			}
-			total = total / value;
+			else {
+				total = total / value;
+			}
+			history = history + " / " + value;
+			
 		}
 		
 		public String getHistory () {
@@ -65,6 +78,6 @@ public class Calculator {
 			 * getHistory returns, in order, each operation on the total in the form of a string with spaces between
 			 * each value and operation
 			 */
-			return "";
+			return history;
 		}
 }
